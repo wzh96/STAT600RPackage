@@ -4,8 +4,7 @@ Version: 1.0.0
 Authors@R: 
     person("Zihang", "Wei", , "wzh96@tamu.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1790-022X"))
-Description: This package implements the Metropolis-Hastings Algorithm to simulate a 
-sequence of random samples from a user defined probability distribution.
+Description: This package implements the Metropolis-Hastings Algorithm to simulate a sequence of random samples from a user defined probability distribution.
 License: AGPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
