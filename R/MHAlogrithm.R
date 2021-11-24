@@ -7,11 +7,16 @@ MHAlogrithm <- function(TargetDensity,
                         niter = 1000)
   {
 
+  if (CGDensity == multivariateNormal){
+    CGenerating <- mvnormalgenerator
+    CGPDF <- mvnormaldensity
+  }
+
   #Check the dimension of xinit
   if(is.null(xinit) == 1){
-    mu <- rep(0, nvar)
+    xinit <- rep(0, nvar)
   }else{
-    if(length(mu) != nvar){
+    if(length(xinit) != nvar){
       stop("check the the length of xinit")
     }
   }
@@ -22,6 +27,22 @@ MHAlogrithm <- function(TargetDensity,
     if(nrow(sigma) != nvar | ncol(sigma) != nvar){
       stop("check the dimension of sigma")
     }
+  }
+
+  x <- xinit
+
+  for(i in 1 : niter){
+
+    y <- CGenerating(xinit, sigma)
+
+    # Calculate the probability of move
+
+    probmove <- (TargetDensity(y) * CGPDF(y, x))/(TargetDensity(x) * CGPDF(x, y))
+
+    a <- min(probmove, 1)
+
+
+
   }
 
   }

@@ -1,4 +1,4 @@
-multivariateNormal <-
+mvnormalgenerator <-
   function(mu, Sigma, tol=1e-6)
   {
     n <- 1
@@ -13,4 +13,9 @@ multivariateNormal <-
     if(is.null(nm) && !is.null(dn <- dimnames(Sigma))) nm <- dn[[1L]]
     dimnames(X) <- list(nm, NULL)
     if(n == 1) drop(X) else t(X)
+  }
+
+mvnormaldensity <-
+  function(x, mu, sigma){
+
   }
