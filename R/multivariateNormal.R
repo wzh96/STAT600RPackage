@@ -17,5 +17,7 @@ mvnormalgenerator <-
 
 mvnormaldensity <-
   function(x, mu, sigma){
-
+    p <- length(mu)
+    density <- exp(-0.5 * t(x - mu) %*% solve(sigma) %*% (x - mu)) / ((2*pi)^(p/2) * sqrt(det(sigma)))
+    return(density)
   }
