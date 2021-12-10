@@ -37,16 +37,16 @@ MHAlogrithmmulti <- function(TargetDensity,
     }
   }
 
-  x <- xinit
-  x_all <- xinit
+  x <- matrix(0, nrow = niter, ncol = nvar)
+  x[1,] <- xinit
 
-  for(i in 1 : niter){
+  for(i in 2 : niter){
 
-    y <- CGenerating(x, sigma)
+    y <- CGenerating(x[i-1,], sigma)
 
     # Calculate the probability of move
 
-    probmove <- (TargetDensity(y) * CGPDF(y, x, sigma))/(TargetDensity(x) * CGPDF(x, y, sigma))
+    probmove <- (TargetDensity(y) * CGPDF(y, x[i-1,], sigma))/(TargetDensity(x[i-1,]) * CGPDF(x[i-1,], y, sigma))
 
     a <- min(probmove, 1)
 
@@ -55,17 +55,15 @@ MHAlogrithmmulti <- function(TargetDensity,
 
     # include the generated y if u is smaller or equal to a
     if( u <= a){
-      x_new <- y
+      x[i,] <- y
     }else{
-        x_new <- x
+      x[i,] <- x[i-1,]
     }
     # add new sample to the collection
 
-    x_all <- rbind(x_all, x_new)
-    x <- x_new
   }
 
-  return(x_all)
+  return(x)
 
   }
 
