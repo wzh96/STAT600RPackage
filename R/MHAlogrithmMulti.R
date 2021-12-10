@@ -1,4 +1,18 @@
 
+#' Metropolis-Hastings Algorithm to sample data from multivariate distribution
+#'
+#' @param TargetDensity The PDF of target density function from which the users want to sample. This should be as a function of x.
+#' @param nvar The number of variables
+#' @param CGDensity Candidate Generating Density function (default is multivariate normal distribution)
+#' @param xinit The starting point of the algorithm
+#' @param sigma The covariance matrix of the candidate generating distribution
+#' @param niter The number of data to sample
+#'
+#' @return Return the data collection sampled from the MH Algorithm
+#' @export
+#'
+#' @examples
+#' Target density can be any multivariate distribution such as Multivariate normal distribution and Multivariate t-distribution
 MHAlogrithmmulti <- function(TargetDensity,
                         nvar,
                         CGDensity = "multivariateNormal",
