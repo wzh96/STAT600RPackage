@@ -12,7 +12,6 @@
 #' @export
 #'
 #' @examples
-#' Target density can be any multivariate distribution such as Multivariate normal distribution and Multivariate t-distribution
 MHAlogrithmmulti <- function(TargetDensity,
                         nvar,
                         CGDensity = "multivariateNormal",

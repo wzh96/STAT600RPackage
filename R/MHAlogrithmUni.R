@@ -10,7 +10,6 @@
 #' @export
 #'
 #' @examples
-#' Target density can be any univariate distribution
 MHAlogrithmuni <- function(TargetDensity,
                            CGDensity = "Normal",
                            xinit = 0,
