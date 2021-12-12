@@ -13,15 +13,15 @@ MHAlogrithmuni(
 )
 }
 \arguments{
-\item{TargetDensity}{The PDF of target density function from which the users want to sample. This should be as a function of x.}
+\item{TargetDensity}{A function: The PDF of target density function from which the users want to sample. This should be as a function of x.}
 
 \item{CGDensity}{Candidate Generating Density function (default is normal distribution)}
 
-\item{xinit}{The starting point of the algorithm}
+\item{xinit}{A scalar: The starting point of the algorithm}
 
-\item{sigma}{The standard deviation of the Candidate Generating Density}
+\item{sigma}{A scalar: The standard deviation of the Candidate Generating Density}
 
-\item{niter}{The number of data to sample}
+\item{niter}{A scalar: The number of data to sample}
 }
 \value{
 Return the data collection sampled from the MH Algorithm

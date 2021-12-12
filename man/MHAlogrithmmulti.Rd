@@ -14,17 +14,17 @@ MHAlogrithmmulti(
 )
 }
 \arguments{
-\item{TargetDensity}{The PDF of target density function from which the users want to sample. This should be as a function of x.}
+\item{TargetDensity}{A function: The PDF of target density function from which the users want to sample. This should be as a function of x.}
 
-\item{nvar}{The number of variables}
+\item{nvar}{A scalar: The number of variables}
 
 \item{CGDensity}{Candidate Generating Density function (default is multivariate normal distribution)}
 
-\item{xinit}{The starting point of the algorithm}
+\item{xinit}{A vector: The starting point of the algorithm}
 
-\item{sigma}{The covariance matrix of the candidate generating distribution}
+\item{sigma}{A matrix: The covariance matrix of the candidate generating distribution}
 
-\item{niter}{The number of data to sample}
+\item{niter}{A scalar: The number of data to sample}
 }
 \value{
 Return the data collection sampled from the MH Algorithm
