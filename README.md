@@ -37,3 +37,4 @@ targetdensity = function(x){
   
 sample <- MHAlogrithmuni(target, xinit = 0, sigma = 1, niter = 5000)
 
+#### See Example.R for detail
