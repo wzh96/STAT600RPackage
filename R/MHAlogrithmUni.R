@@ -1,10 +1,10 @@
 #' Metropolis-Hastings Algorithm to sample data from univariate distribution
 #'
-#' @param TargetDensity The PDF of target density function from which the users want to sample. This should be as a function of x.
+#' @param TargetDensity A function: The PDF of target density function from which the users want to sample. This should be as a function of x.
 #' @param CGDensity Candidate Generating Density function (default is normal distribution)
-#' @param xinit The starting point of the algorithm
-#' @param sigma The standard deviation of the Candidate Generating Density
-#' @param niter The number of data to sample
+#' @param xinit A scalar: The starting point of the algorithm
+#' @param sigma A scalar: The standard deviation of the Candidate Generating Density
+#' @param niter A scalar: The number of data to sample
 #'
 #' @return Return the data collection sampled from the MH Algorithm
 #' @export
